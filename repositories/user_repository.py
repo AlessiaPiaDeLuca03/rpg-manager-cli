@@ -25,6 +25,8 @@ def create_user(user: User) -> None:
         user.password_hash,
         user.role_id
     ))
+    connection.commit()
+    connection.close()
 
 def get_user_by_email(email: str):
     """
@@ -52,8 +54,6 @@ def get_user_by_email(email: str):
 
     return user
 
-    connection.commit()
-    connection.close()
 
     #spiegazione
     # La funzione create_user accetta un oggetto User come parametro.

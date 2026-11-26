@@ -62,3 +62,11 @@ def login_user(
     # Crea un oggetto User con i dati forniti e il role_id impostato a 2 (utente standard).
     # Chiama la funzione create_user per inserire l'utente nel database.
     # La funzione non restituisce alcun valore.
+
+    #spiegazione
+    # La funzione login_user accetta email e password come parametri.
+    # Normalizza l'email rimuovendo spazi e convertendola in minuscolo.
+    # Recupera l'utente dal database utilizzando get_user_by_email.
+    # Se l'utente non esiste, restituisce False.
+    # Altrimenti, verifica la password confrontando l'hash memorizzato con la password fornita.
+    # Restituisce True se la password è corretta, False altrimenti.
