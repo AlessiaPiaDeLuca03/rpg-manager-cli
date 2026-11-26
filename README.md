@@ -76,7 +76,7 @@ Tabelle implementate:
 
 roles,
 users,
-characters.
+characters.(![alt text](image-3.png))
 ------------------------------------------------------------------------------------------------
 Installazione ^-^
 
@@ -101,3 +101,11 @@ Eventi RPG.
 
 Autore:
 Alessia P. De Luca 
+
+
+
+
+
+
+
+
