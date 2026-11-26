@@ -42,14 +42,43 @@ def create_tables() -> None:
 
     cursor.execute("""
     INSERT OR IGNORE INTO roles(name)
-    VALUES ('admin')
+    VALUES ('admin')   
     """)
-
+    # Ruolo dell'amministratore, con tutti i permessi.
+    
+    
     cursor.execute("""
     INSERT OR IGNORE INTO roles(name)
-    VALUES ('user')
+    VALUES ('user') 
     """)
-
+    # Ruolo dell'utente standard, con permessi limitati.
+    
+    
+    cursor.execute("""
+    INSERT OR IGNORE INTO roles(name)
+    VALUES ('moderator') 
+    """)
+    # Ruolo del moderatore, con permessi speciali per gestire
+    # contenuti e utenti
+    
+    cursor.execute("""
+    INSERT OR IGNORE INTO roles(name)
+    VALUES ('game_master') 
+    """)
+    # Ruolo del master del gioco, con permessi speciali per gestire
+    # le sessioni di gioco(creare eventi e gestire i tornei).
+    cursor.execute("""
+    INSERT OR IGNORE INTO roles(name)
+    VALUES ('vip')
+    """)
+    # Ruolo per utenti VIP (con privilegi speciali o accesso a contenuti esclusivi).
+    cursor.execute("""
+    INSERT OR IGNORE INTO roles(name)
+    VALUES ('guild_master') 
+    """)
+    # Ruolo del maestro della gilda, con permessi speciali per
+    # gestire la gilda e i suoi membri.
+    
     connection.commit()
     connection.close()
 
@@ -62,3 +91,7 @@ def create_tables() -> None:
     # Alla fine, la connessione al database viene chiusa dopo aver eseguito i commit delle modifiche.
     # Vengono anche inseriti i ruoli di default 'admin' e 'user' nella tabella roles.
     # La funzione create_tables viene chiamata all'avvio dell'applicazione per assicurarsi che le tabelle esistano e siano pronte all'uso.
+
+
+    #"Ho implementato una struttura estendibile dei ruoli e ho previsto ruoli aggiuntivi come moderator,
+    # guild master,vip e game master."
