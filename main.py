@@ -57,7 +57,12 @@ def main() -> None:
 
             name = input("Nome Personaggio: ")
             character_class = input("Classe: ")
-            level = int(input("Livello: "))
+
+            try:
+                level = int(input("Livello: "))
+            except ValueError:
+                print("Inserisci un numero valido")
+                continue
 
             create_new_character(
                 name=name,
@@ -70,17 +75,25 @@ def main() -> None:
 
         elif scelta == "4":
 
-            show_all_characters()
+           show_all_characters()
 
         elif scelta == "5":
 
-            character_id = int(
-                input("ID Personaggio: ")
-            )
+            try:
+                character_id = int(
+                    input("ID Personaggio: ")
+                )
+            except ValueError:
+                print("Inserisci un ID valido")
+                continue
 
-            level = int(
-                input("Nuovo Livello: ")
-            )
+            try:
+                level = int(
+                    input("Nuovo Livello: ")
+                )
+            except ValueError:
+                print("Inserisci un numero valido")
+                continue
 
             update_character(
                 character_id,
@@ -91,16 +104,20 @@ def main() -> None:
 
         elif scelta == "6":
 
-            character_id = int(
-                input("ID Personaggio: ")
-            )
+            try:
+                character_id = int(
+                    input("ID Personaggio: ")
+                )
+            except ValueError:
+                print("Inserisci un ID valido")
+                continue
 
             remove_character(
                 character_id
             )
 
             print("Personaggio eliminato!")
-
+        
         elif scelta == "7":
 
             name = input(
@@ -134,3 +151,6 @@ if __name__ == "__main__":
 # In base alla scelta dell'utente, esegue le azioni corrispondenti.
 # Il ciclo continua fino a quando l'utente sceglie di uscire.
 # Le azioni di registrazione e login sono attualmente solo dei placeholder e devono essere implementate.
+# con try e except gestiamo gli input non validi dell'utente, come ID o livello non numerici.
+# Se l'utente inserisce un valore non valido, viene mostrato un messaggio di errore e 
+# il ciclo continua senza interrompere l'applicazione.
