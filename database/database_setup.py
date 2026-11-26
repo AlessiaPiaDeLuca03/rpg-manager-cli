@@ -40,6 +40,16 @@ def create_tables() -> None:
     )
     """)
 
+    cursor.execute("""
+    INSERT OR IGNORE INTO roles(name)
+    VALUES ('admin')
+    """)
+
+    cursor.execute("""
+    INSERT OR IGNORE INTO roles(name)
+    VALUES ('user')
+    """)
+
     connection.commit()
     connection.close()
 
