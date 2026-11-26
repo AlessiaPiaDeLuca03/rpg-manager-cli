@@ -97,6 +97,10 @@ Gestione amministratore dedicata.
 Gestione gilde.
 Gestione inventario.
 Eventi RPG.
+------------------------------------------------------------------------------------------------
+Validators:
+validators/
+Contiene le funzioni di validazione degli input.
 
 
 Autore:
