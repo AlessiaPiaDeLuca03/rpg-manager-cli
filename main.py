@@ -5,7 +5,10 @@ from services.auth_service import (
 )
 from services.character_service import (
     create_new_character,
-    show_all_characters
+    show_all_characters,
+    update_character,
+    remove_character,
+    find_character
 )
 
 
@@ -20,8 +23,10 @@ def main() -> None:
         print("2. Login")
         print("3. Crea Personaggio")
         print("4. Lista Personaggi")
+        print("5. Modifica Personaggio")
+        print("6. Elimina Personaggio")
+        print("7. Cerca Personaggio")
         print("0. Esci")
-
         scelta = input("Scelta: ")
 
         if scelta == "1":
@@ -67,6 +72,43 @@ def main() -> None:
 
             show_all_characters()
 
+        elif scelta == "5":
+
+            character_id = int(
+                input("ID Personaggio: ")
+            )
+
+            level = int(
+                input("Nuovo Livello: ")
+            )
+
+            update_character(
+                character_id,
+                level
+            )
+
+            print("Personaggio aggiornato!")
+
+        elif scelta == "6":
+
+            character_id = int(
+                input("ID Personaggio: ")
+            )
+
+            remove_character(
+                character_id
+            )
+
+            print("Personaggio eliminato!")
+
+        elif scelta == "7":
+
+            name = input(
+                "Nome da cercare: "
+            )
+
+            find_character(name)
+ 
         elif scelta == "0":
 
             print("Arrivederci!")
