@@ -26,6 +26,32 @@ def create_user(user: User) -> None:
         user.role_id
     ))
 
+def get_user_by_email(email: str):
+    """
+    Recupera un utente dal database in base all'email.
+    """
+    #spiegazione
+    # La funzione get_user_by_email accetta un'email come parametro.
+    # Si connette al database, crea un cursore e esegue una query per recuperare l'utente con l'email specificata.
+    # Restituisce l'utente trovato o None se non esiste.
+    # La connessione al database viene chiusa dopo aver eseguito la query.
+
+    connection = get_connection()
+
+    cursor = connection.cursor()
+
+    cursor.execute("""
+    SELECT *
+    FROM users
+    WHERE email = ?
+    """, (email,))
+
+    user = cursor.fetchone()
+
+    connection.close()
+
+    return user
+
     connection.commit()
     connection.close()
 
