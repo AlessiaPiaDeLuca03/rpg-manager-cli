@@ -60,3 +60,5 @@ def create_tables() -> None:
     # - users: contiene gli utenti (id, username, email, password_hash, role_id) con una chiave esterna verso roles
     # - characters: contiene i personaggi (id, name, character_class, level, user_id) con una chiave esterna verso users
     # Alla fine, la connessione al database viene chiusa dopo aver eseguito i commit delle modifiche.
+    # Vengono anche inseriti i ruoli di default 'admin' e 'user' nella tabella roles.
+    # La funzione create_tables viene chiamata all'avvio dell'applicazione per assicurarsi che le tabelle esistano e siano pronte all'uso.
