@@ -1,4 +1,6 @@
+
 from database.database_setup import create_tables
+from menus.main_menu import show_main_menu
 from services.auth_service import (
     register_user,
     login_user
@@ -18,15 +20,7 @@ def main() -> None:
 
     while True:
 
-        print("\n===== RPG MANAGER =====")
-        print("1. Registrazione")
-        print("2. Login")
-        print("3. Crea Personaggio")
-        print("4. Lista Personaggi")
-        print("5. Modifica Personaggio")
-        print("6. Elimina Personaggio")
-        print("7. Cerca Personaggio")
-        print("0. Esci")
+        show_main_menu()
         scelta = input("Scelta: ")
 
         if scelta == "1":
