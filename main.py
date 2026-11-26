@@ -1,29 +1,23 @@
 from database.database_setup import create_tables
-from services.auth_service import register_user
+from services.auth_service import login_user
 
 
 def main() -> None:
 
     create_tables()
 
-    username = input("Username: ")
-
     email = input("Email: ")
-
     password = input("Password: ")
 
-    register_user(
-        username=username,
-        email=email,
-        password=password
-    )
-
-    print("Utente registrato correttamente!")
+    if login_user(email, password):
+        print("Login effettuato!")
+    else:
+        print("Email o password errati!")
 
 
 if __name__ == "__main__":
     main()
-
+    
 #spiegazione
 # Questo file contiene il punto di ingresso principale dell'applicazione.
 # La funzione main chiama create_tables per creare le tabelle del database se non esistono già.
