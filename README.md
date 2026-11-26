@@ -3,9 +3,7 @@ RPG Character Manager ^-^
 
 Descrizione:
 
-RPG Character Manager è un'applicazione sviluppata in Python che permette la gestione di utenti e personaggi RPG tramite database SQLite.
-
-Il progetto è stato realizzato utilizzando una struttura modulare con separazione tra modelli, servizi, repository e gestione del database.
+RPG Character Manager è un'applicazione sviluppata in Python che permette la gestione di utenti e personaggi RPG tramite un database SQLite. Il programma include registrazione e login con password protette tramite hashing usando Werkzeug, gestione dei ruoli, CRUD completo dei personaggi (creazione, visualizzazione, modifica ed eliminazione) e funzionalità di ricerca. Il progetto utilizza Git e GitHub ed è organizzato secondo una struttura modulare con cartelle dedicate a modelli, servizi, repository e database.
 ------------------------------------------------------------------------------------------------
 Tecnologie Utilizzate ^-^
 
