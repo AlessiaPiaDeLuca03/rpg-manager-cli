@@ -79,9 +79,7 @@ def create_tables() -> None:
     # Ruolo del maestro della gilda, con permessi speciali per
     # gestire la gilda e i suoi membri.
     
-    connection.commit()
-    connection.close()
-
+   
     #spiegazione
     # Ho creato una funzione create_tables che si occupa di creare le tabelle del database se non esistono già.
     # Le tabelle create sono:
@@ -91,6 +89,9 @@ def create_tables() -> None:
     # Alla fine, la connessione al database viene chiusa dopo aver eseguito i commit delle modifiche.
     # Vengono anche inseriti i ruoli di default 'admin' e 'user' nella tabella roles.
     # La funzione create_tables viene chiamata all'avvio dell'applicazione per assicurarsi che le tabelle esistano e siano pronte all'uso.
+        
+    connection.commit()
+    connection.close()
 
 
     #"Ho implementato una struttura estendibile dei ruoli e ho previsto ruoli aggiuntivi come moderator,
