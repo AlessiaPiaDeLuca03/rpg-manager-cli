@@ -153,7 +153,7 @@ def search_character(
     SELECT *
     FROM characters
     WHERE name LIKE ?
-    """, (f"%{name}%",))
+    """, (f"%{name}%",)) #scritto in questo modo perche' permette di cercare il nome anche se e' solo parzialmente corrispondente ^-^
 
     characters = cursor.fetchall()
 
