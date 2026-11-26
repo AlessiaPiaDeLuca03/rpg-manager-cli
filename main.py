@@ -1,4 +1,8 @@
 from database.database_setup import create_tables
+from services.auth_service import (
+    register_user,
+    login_user
+)
 
 
 def main() -> None:
@@ -15,16 +19,36 @@ def main() -> None:
         scelta = input("Scelta: ")
 
         if scelta == "1":
-            print("Registrazione")
+
+            username = input("Username: ")
+            email = input("Email: ")
+            password = input("Password: ")
+
+            register_user(
+                username=username,
+                email=email,
+                password=password
+            )
+
+            print("Utente registrato!")
 
         elif scelta == "2":
-            print("Login")
+
+            email = input("Email: ")
+            password = input("Password: ")
+
+            if login_user(email, password):
+                print("Login effettuato!")
+            else:
+                print("Email o password errati!")
 
         elif scelta == "0":
+
             print("Arrivederci!")
             break
 
         else:
+
             print("Scelta non valida")
 
 
