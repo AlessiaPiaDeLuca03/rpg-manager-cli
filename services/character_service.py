@@ -2,11 +2,12 @@
 Servizi per la gestione dei personaggi.
 """
 
+from models.character import Character
+
 from repositories.character_repository import (
     create_character,
     get_all_characters
 )
-
 
 
 def create_new_character(
@@ -24,6 +25,7 @@ def create_new_character(
     )
 
     create_character(character)
+
 
 def show_all_characters():
 

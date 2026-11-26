@@ -3,6 +3,10 @@ from services.auth_service import (
     register_user,
     login_user
 )
+from services.character_service import (
+    create_new_character,
+    show_all_characters
+)
 
 
 def main() -> None:
@@ -14,6 +18,8 @@ def main() -> None:
         print("\n===== RPG MANAGER =====")
         print("1. Registrazione")
         print("2. Login")
+        print("3. Crea Personaggio")
+        print("4. Lista Personaggi")
         print("0. Esci")
 
         scelta = input("Scelta: ")
@@ -41,6 +47,25 @@ def main() -> None:
                 print("Login effettuato!")
             else:
                 print("Email o password errati!")
+
+        elif scelta == "3":
+
+            name = input("Nome Personaggio: ")
+            character_class = input("Classe: ")
+            level = int(input("Livello: "))
+
+            create_new_character(
+                name=name,
+                character_class=character_class,
+                level=level,
+                user_id=1
+            )
+
+            print("Personaggio creato!")
+
+        elif scelta == "4":
+
+            show_all_characters()
 
         elif scelta == "0":
 

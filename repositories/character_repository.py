@@ -25,3 +25,21 @@ def create_character(character: Character) -> None:
 
     connection.commit()
     connection.close()
+
+
+def get_all_characters():
+
+    connection = get_connection()
+
+    cursor = connection.cursor()
+
+    cursor.execute("""
+    SELECT *
+    FROM characters
+    """)
+
+    characters = cursor.fetchall()
+
+    connection.close()
+
+    return characters
